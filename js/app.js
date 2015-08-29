@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -13,39 +13,54 @@ $(document).ready(function(){
   	});
 
     // Create Random Number
-    var randomNumber = Math.floor(Math.random() * 100);
+    var randomNumber = Math.floor(Math.random() * 100 + 1);
 
     console.log("randomNumber: " + randomNumber);
 	 
     // User Input
 
-    // userInput = undefined;
+    var userInput = undefined;
 
     $('form').on('submit', function(e) {
       e.preventDefault();
-      userInput = $('#userGuess').val();
+      var userInput = $('#userGuess').val();
 
       console.log("userInput: " + userInput);
-    });
+    
+    // Append User Input
+    $('#guessList').append('<li>' + userInput + '</li>');
 
+
+    // Check Difference
     var difference = Math.abs(userInput - randomNumber);
 
     console.log("difference: " + difference);
 
+    if( (userInput + 50) >= randomNumber) {
+      console.log("+50");
+    } else if ((userInput + 10) >= randomNumber) {
+      console.log("+10");
+    } else if ((userInput + 5) >= randomNumber) {
+      console.log("+5");
+    }
+
+
 });
 
-  // Append User Input
 
-  $('ul').append('<li>' + userInput + '</li>');
+    // New Game Function
+    function newGame() {
+      $('#guessList').empty();
+      $('input[type=text]').each(function() {
+        $(this).val('');
 
+      });
+      console.log("New Game");
+    }
+    // New Game Button fire
+    $('.new').click(function() {
+      newGame();
 
-// New Game Function
-function newGame() {
-  // document.getElementById('guessList').reset();
-  console.log("New Game");
-}
+    });
 
-$('.new').click(function() {
-    // newGame();
-    console.log("Hello");
-});
+ });
