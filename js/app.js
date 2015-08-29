@@ -36,12 +36,14 @@ $(document).ready(function() {
 
     console.log("difference: " + difference);
 
-    if( (userInput + 50) >= randomNumber) {
-      console.log("+50");
-    } else if ((userInput + 10) >= randomNumber) {
-      console.log("+10");
-    } else if ((userInput + 5) >= randomNumber) {
-      console.log("+5");
+    if( difference > 50) {
+      console.log("more than 50");
+    } else if (difference > 10) {
+      console.log("more than 10");
+    } else if (difference > 5) {
+      console.log("more than 5");
+    } else {
+      console.log("Far away");
     }
 
 
