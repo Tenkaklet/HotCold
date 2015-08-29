@@ -1,4 +1,8 @@
 
+var randomNumber = newRandomNumber();
+
+
+
 $(document).ready(function() {
 	
 	/*--- Display information modal box ---*/
@@ -13,8 +17,7 @@ $(document).ready(function() {
   	});
 
     // Create Random Number
-    var randomNumber = Math.floor(Math.random() * 100 + 1);
-
+    
     console.log("randomNumber: " + randomNumber);
 	 
     // User Input
@@ -36,29 +39,22 @@ $(document).ready(function() {
 
     console.log("difference: " + difference);
 
-    if( difference > 50) {
-      console.log("more than 50");
-    } else if (difference > 10) {
-      console.log("more than 10");
-    } else if (difference > 5) {
-      console.log("more than 5");
-    } else {
-      console.log("Far away");
+    if( difference >= 50) {
+      $('#feedback').text('Freezing...');
+    } else if (difference >= 10) {
+      $('#feedback').text('Getting Warm...');
+    } else if (difference >= 5) {
+      $('#feedback').text('Ouch Burning!');
+    } else if (difference === 0) {
+      $('#feedback').text('You got it!');
     }
 
 
 });
 
+    
 
-    // New Game Function
-    function newGame() {
-      $('#guessList').empty();
-      $('input[type=text]').each(function() {
-        $(this).val('');
 
-      });
-      console.log("New Game");
-    }
     // New Game Button fire
     $('.new').click(function() {
       newGame();
@@ -66,3 +62,23 @@ $(document).ready(function() {
     });
 
  });
+
+
+ // New Game Function
+    function newGame() {
+      randomNumber = newRandomNumber();
+      $('#guessList').empty();
+      $('input[type=text]').each(function() {
+        $(this).val('');
+        
+      
+      });
+      console.log("New Game");
+      console.log(randomNumber);
+    }
+
+    function newRandomNumber() {
+      return Math.floor(Math.random() * 100 + 1);
+    }
+
+
