@@ -66,7 +66,12 @@ $(document).ready(function() {
     $('.new').click(function() {
       newGame();
 
+      $('#count').text(countArray[0]);
+
+
+
     });
+
 
  });
 
@@ -77,7 +82,7 @@ $(document).ready(function() {
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
-        countArray.length = 0;
+
        
       
       });
