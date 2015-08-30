@@ -74,7 +74,7 @@ $(document).ready(function() {
       
       });
       console.log("New Game");
-      console.log(randomNumber);
+      console.log("New random number: " + randomNumber);
     }
 
     function newRandomNumber() {
