@@ -52,6 +52,13 @@ $(document).ready(function() {
 
 });
 
+    // Count Array (increments # of guesses)
+
+    var countArray = [1];
+
+    $('#guessButton').click(function(event) {
+      $('#count').text(countArray++);
+    });
     
 
 
@@ -70,7 +77,8 @@ $(document).ready(function() {
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
-        
+        countArray.length = 0;
+       
       
       });
       console.log("New Game");
@@ -80,5 +88,4 @@ $(document).ready(function() {
     function newRandomNumber() {
       return Math.floor(Math.random() * 100 + 1);
     }
-
 
