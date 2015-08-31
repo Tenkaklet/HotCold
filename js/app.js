@@ -80,17 +80,18 @@ $(document).ready(function() {
  // New Game Function
     function newGame() {
       randomNumber = newRandomNumber();
+      countArray = newArray();
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
-        countArray = newArray();
+        
 
        
       
       });
       console.log("New Game");
       console.log("New random number: " + randomNumber);
-      console.log(countArray);
+      
     }
 
     function newRandomNumber() {
@@ -98,7 +99,10 @@ $(document).ready(function() {
     }
 
      function newArray() {
+      $('#count').text(0);
       countArray = [];
-      // console.log(countArray.length);
+      console.log("new Array");
+      console.log(countArray.length);
+      
 
     }
