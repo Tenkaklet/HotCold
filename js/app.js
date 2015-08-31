@@ -29,6 +29,14 @@ $(document).ready(function() {
       e.preventDefault();
       var userInput = $('#userGuess').val();
 
+      if ( isNaN(userInput)) {
+        $('#feedback').text('Please input a number');
+      }
+      if (userInput === "boo") {
+        $('#feedback').text('Please input a number between 1 & 100');
+        console.log("2");
+      }
+
       console.log("userInput: " + userInput);
     
     // Append User Input
@@ -84,6 +92,7 @@ $(document).ready(function() {
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
+      $('#feedback').text('Make your Guess!');
         
 
        
