@@ -32,9 +32,11 @@ $(document).ready(function() {
       if ( isNaN(userInput)) {
         $('#feedback').text('Please input a number');
       }
-      if (userInput === "boo") {
+      if (userInput >= 1 && userInput <= 100) {
+        console.log("between 1 - 100");
+      } else {
         $('#feedback').text('Please input a number between 1 & 100');
-        console.log("2");
+        console.log("number");
       }
 
       console.log("userInput: " + userInput);
