@@ -1,6 +1,7 @@
 
 var randomNumber = newRandomNumber();
 
+var countArray = newArray();
 
 
 $(document).ready(function() {
@@ -66,12 +67,12 @@ $(document).ready(function() {
     $('.new').click(function() {
       newGame();
 
-      $('#count').text(countArray[0]);
 
 
 
     });
 
+   
 
  });
 
@@ -82,15 +83,22 @@ $(document).ready(function() {
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
+        countArray = newArray();
 
        
       
       });
       console.log("New Game");
       console.log("New random number: " + randomNumber);
+      console.log(countArray);
     }
 
     function newRandomNumber() {
       return Math.floor(Math.random() * 100 + 1);
     }
 
+     function newArray() {
+      countArray = [];
+      // console.log(countArray.length);
+
+    }
