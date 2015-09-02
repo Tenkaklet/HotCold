@@ -1,7 +1,7 @@
 
 var randomNumber = newRandomNumber();
 
-// var countArray = newArray();
+
 
 
 $(document).ready(function() {
@@ -35,13 +35,11 @@ $(document).ready(function() {
           return false;
         }        
         if (userInput >= 1 && userInput <= 100) {
-          // console.log("between 1 - 100");
+         
         } else {
           $('#feedback').text('Please input a number between 1 & 100');
-          console.log("number too high");
+         
         }
-
-      console.log("userInput: " + userInput);
 
       // Append User Input
       $('#guessList').append('<li>' + userInput + '</li>');
@@ -49,8 +47,7 @@ $(document).ready(function() {
 
       // Check Difference
       var difference = Math.abs(userInput - randomNumber);
-
-      console.log("difference: " + difference);
+      
       if ( userInput < 1 || userInput > 100) {
         $('#feedback').text('Please input a number between 1 & 100');
       } else if( difference >= 50) {
@@ -73,7 +70,6 @@ $(document).ready(function() {
       $('#guessButton').click(function(event) {
         $('#count').text(countArray++);
       });
-      
 
 
       // New Game Button fire
@@ -82,10 +78,7 @@ $(document).ready(function() {
 
       });
 
-
-
   });
-
 
    // New Game Function
       function newGame() {
@@ -98,18 +91,13 @@ $(document).ready(function() {
 
         randomNumber = newRandomNumber();
         $('#count').text(0);
-        // countArray.length = 0;
+
         $('#guessList').empty();
         $('input[type=text]').each(function() {
           $(this).val('');
         $('#feedback').text('Make your Guess!');
-          
 
-         
-        
         });
-        console.log("New Game");
-        console.log("New random number: " + randomNumber);
         
       }
 
