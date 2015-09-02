@@ -1,7 +1,7 @@
 
 var randomNumber = newRandomNumber();
 
-var countArray = newArray();
+// var countArray = newArray();
 
 
 $(document).ready(function() {
@@ -31,12 +31,13 @@ $(document).ready(function() {
 
       if ( isNaN(userInput)) {
         $('#feedback').text('Please input a number');
+        return false;
       }
       if (userInput >= 1 && userInput <= 100) {
         console.log("between 1 - 100");
       } else {
         $('#feedback').text('Please input a number between 1 & 100');
-        console.log("number");
+        console.log("number too high");
       }
 
       console.log("userInput: " + userInput);
@@ -49,8 +50,9 @@ $(document).ready(function() {
     var difference = Math.abs(userInput - randomNumber);
 
     console.log("difference: " + difference);
-
-    if( difference >= 50) {
+    if ( userInput < 1 || userInput >= 100) {
+      $('#feedback').text('Please input a number between 1 & 100');
+    } else if( difference >= 50) {
       $('#feedback').text('Freezing...');
     } else if (difference >= 10) {
       $('#feedback').text('Getting Warm...');
@@ -89,8 +91,16 @@ $(document).ready(function() {
 
  // New Game Function
     function newGame() {
+
+      var countArray = [1];
+
+    $('#guessButton').click(function(event) {
+      $('#count').text(countArray++);
+    });
+      
       randomNumber = newRandomNumber();
-      countArray = newArray();
+      $('#count').text(0);
+      // countArray.length = 0;
       $('#guessList').empty();
       $('input[type=text]').each(function() {
         $(this).val('');
@@ -109,6 +119,7 @@ $(document).ready(function() {
       return Math.floor(Math.random() * 100 + 1);
     }
 
+    /*
      function newArray() {
       $('#count').text(0);
       countArray = [];
@@ -117,3 +128,4 @@ $(document).ready(function() {
       
 
     }
+*/
