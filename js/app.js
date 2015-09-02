@@ -28,6 +28,7 @@ $(document).ready(function() {
     $('form').on('submit', function(e) {
       e.preventDefault();
       var userInput = $('#userGuess').val();
+      $('#userGuess').val('');
 
         if ( isNaN(userInput)) {
           $('#feedback').text('Please input a number');
