@@ -17,9 +17,9 @@ $(document).ready(function() {
     $(".overlay").fadeOut(1000);
   });
 
-    // Create Random Number
     
-    console.log("randomNumber: " + randomNumber);
+    
+    
 
     // User Input
 
@@ -101,6 +101,7 @@ $(document).ready(function() {
         
       }
 
+      // Create Random Number
       function newRandomNumber() {
         return Math.floor(Math.random() * 100 + 1);
       }
