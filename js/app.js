@@ -34,7 +34,7 @@ $(document).ready(function() {
         return false;
       }
       if (userInput >= 1 && userInput <= 100) {
-        console.log("between 1 - 100");
+        // console.log("between 1 - 100");
       } else {
         $('#feedback').text('Please input a number between 1 & 100');
         console.log("number too high");
@@ -50,7 +50,7 @@ $(document).ready(function() {
     var difference = Math.abs(userInput - randomNumber);
 
     console.log("difference: " + difference);
-    if ( userInput < 1 || userInput >= 100) {
+    if ( userInput < 1 || userInput > 100) {
       $('#feedback').text('Please input a number between 1 & 100');
     } else if( difference >= 50) {
       $('#feedback').text('Freezing...');
@@ -97,7 +97,7 @@ $(document).ready(function() {
     $('#guessButton').click(function(event) {
       $('#count').text(countArray++);
     });
-      
+
       randomNumber = newRandomNumber();
       $('#count').text(0);
       // countArray.length = 0;
