@@ -31,9 +31,9 @@ $(document).ready(function() {
       $('#userGuess').val('');
 
         if ( isNaN(userInput)) {
-          $('#feedback').text('Please input a number');
+          $('#feedback').text('Please input a number').effect("shake");
           return false;
-        }
+        }        
         if (userInput >= 1 && userInput <= 100) {
           // console.log("between 1 - 100");
         } else {
