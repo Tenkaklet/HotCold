@@ -56,7 +56,7 @@ $(document).ready(function() {
         $('#feedback').text('Freezing...');
       } else if (difference >= 10) {
         $('#feedback').text('Getting Warm...');
-      } else if (difference >= 5) {
+      } else if (difference >= 2) {
         $('#feedback').text('Ouch Burning!');
       } else if (difference === 0) {
         $('#feedback').text('You got it!');
